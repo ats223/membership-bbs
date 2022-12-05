@@ -12,10 +12,10 @@ sudo systemctl start docker
 sudo systemctl enable docker
 sudo usermod -a -G docker ec2-user
 
-PHPのインストール
+PHP インストール
 sudo yum install php php-fpm php-mysql php-curl php-gd php-mbstring php-mcrypt php-xml php-xmlrpc
 
-MySQLのインストール
+MySQL インストール
 sudo rpm -ivh http://dev.mysql.com/get/mysql57-community-release-el7-8.noarch.rpm
 sudo yum install mysql-community-server
 ```
@@ -54,16 +54,12 @@ CREATE TABLE `users` (
     `name` TEXT NOT NULL,
     `email` TEXT NOT NULL,
     `password` TEXT NOT NULL,
-    `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP
+    `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP,
+    `icon_filename` TEXT DEFAULT NULL,
+    `introduction` TEXT DEFAULT NULL,
+    `cover_filename` TEXT DEFAULT NULL,
+    `birthday` DATE DEFAULT NULL
 );
-
-ALTER TABLE `users` ADD COLUMN icon_filename TEXT DEFAULT NULL;
-
-ALTER TABLE `users` ADD COLUMN introduction TEXT DEFAULT NULL;
-
-ALTER TABLE `users` ADD COLUMN cover_filename TEXT DEFAULT NULL;
-
-ALTER TABLE `users` ADD COLUMN birthday DATE DEFAULT NULL;
 ```
 ```
 
@@ -74,8 +70,6 @@ CREATE TABLE `bbs_entries` (
     `image_filename` TEXT DEFAULT NULL,
     `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP
 );
-
-
 ```
 
 ```
@@ -85,9 +79,8 @@ CREATE TABLE `user_relationships` (
     `follower_user_id` INT UNSIGNED NOT NULL,
     `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP
 );
-
-
 ```
+
 登録されるメールアドレスに対する所有確認作業は今回は省きます。
 
 ユーザー情報を登録後、メールアドレスとパスワードを入力し、ログインする
