@@ -1,18 +1,32 @@
-# bbs 構築手順
+# 構築手順
 
-http://サーバーのIPアドレス/bbs.php
+http://サーバーのIPアドレス/signup.php でユーザー情報を登録後、login.php でログインしてbbs.phpにアクセス
 
 ## 準備
-インスタンスを起動し秘密鍵を作成<br>
+インスタンスを起動し秘密鍵を作成、<br>
 あらかじめPHP,Docker,Git,MYSQLをインストールする
+```
+docker インストール方法
+sudo yum install -y docker
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo usermod -a -G docker ec2-user
+
+PHPのインストール
+sudo yum install php php-fpm php-mysql php-curl php-gd php-mbstring php-mcrypt php-xml php-xmlrpc
+
+MySQLのインストール
+sudo rpm -ivh http://dev.mysql.com/get/mysql57-community-release-el7-8.noarch.rpm
+sudo yum install mysql-community-server
+```
 
 
 
 1.GitHub リポジトリをクローンする
 
 ```
-git clone git@github.com:ats223/bbs.git
-cd bbs
+git clone git@github.com:ats223/membership-bbs.git
+cd membership-bbs
 ```
 
 2.Docker コンテナをビルドし、Docker Composeで起動する
@@ -27,7 +41,7 @@ docker compose build
 docker compose up
 ```
 
-3.Docker コンテナ内で MYSQL に接続する
+3.Docker コンテナ内で MYSQL のクライアントを用いてサーバーに接続する(DB名はtechc)
 
 ```
 docker compose exec mysql mysql techc
@@ -43,6 +57,13 @@ CREATE TABLE `users` (
     `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
+ALTER TABLE `users` ADD COLUMN icon_filename TEXT DEFAULT NULL;
+
+ALTER TABLE `users` ADD COLUMN introduction TEXT DEFAULT NULL;
+
+ALTER TABLE `users` ADD COLUMN cover_filename TEXT DEFAULT NULL;
+
+ALTER TABLE `users` ADD COLUMN birthday DATE DEFAULT NULL;
 ```
 ```
 
@@ -65,16 +86,10 @@ CREATE TABLE `user_relationships` (
     `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
-ALTER TABLE `users` ADD COLUMN icon_filename TEXT DEFAULT NULL;
 
-ALTER TABLE `users` ADD COLUMN introduction TEXT DEFAULT NULL;
-
-ALTER TABLE `users` ADD COLUMN cover_filename TEXT DEFAULT NULL;
-
-ALTER TABLE `users` ADD COLUMN birthday DATE DEFAULT NULL;
 ```
+登録されるメールアドレスに対する所有確認作業は今回は省きます。
 
-
-http://サーバーのIPアドレス/signup.php でユーザー情報を登録後、ログインしてbbs.phpにアクセス可能
+ユーザー情報を登録後、メールアドレスとパスワードを入力し、ログインする
 
 以上
