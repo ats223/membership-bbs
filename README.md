@@ -22,14 +22,14 @@ sudo yum install mysql-community-server
 
 
 
-##1.GitHub リポジトリをクローンする
+## 1.GitHub リポジトリをクローンする
 
 ```
 git clone git@github.com:ats223/membership-bbs.git
 cd membership-bbs
 ```
 
-##2.Docker コンテナをビルドし、Docker Composeで起動する
+## 2.Docker コンテナをビルドし、Docker Composeで起動する
 
 ```
 sudo mkdir -p /usr/local/lib/docker/cli-plugins/
@@ -41,13 +41,13 @@ docker compose build
 docker compose up
 ```
 
-##3.Docker コンテナ内で MYSQL のクライアントを用いてサーバーに接続する(DB名はtechc)
+## 3.Docker コンテナ内で MYSQL のクライアントを用いてサーバーに接続する(DB名はtechc)
 
 ```
 docker compose exec mysql mysql techc
 ```
 
-##4.会員情報テーブル、掲示板投稿テーブル、フォロー機能を管理する中間テーブルを作成する
+## 4.会員情報テーブル、掲示板投稿テーブル、フォロー機能を管理する中間テーブルを作成する
 ```
 CREATE TABLE `users` (
     `id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
