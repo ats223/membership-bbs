@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang=ja>
+<link rel="stylesheet" href="/css/style.css">
+<script src="/js/test.js"></script>
+
+<header id="header">PROFILE</header>
+<body>
+
+  <main>
+    <div class="name">
+
+   <h1>森 篤史のプロフィールです</h1>
+
+      <img src="/images/test01.jpg"><br>     
+    </div>
+
+    <input type="button" value="button" id="btn">    
+    <script>
+      function butotnClick(){
+         alert('Click');
+      }
+
+      let button = document.getElementById('btn');  
+    button.addEventListener('click', butotnClick);
+      </script>
+
+
+    <ul>
+       <li><a href="/hobby.html">趣味</a><br></li>
+       <li><a href="/food.html">好きな食べ物</a></li>
+    </ul>
+
+  </main>
+</body>
+</html>
