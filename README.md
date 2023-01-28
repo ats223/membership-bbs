@@ -1,3 +1,10 @@
+#概要
+![012401](https://user-images.githubusercontent.com/83529682/215229590-168d5fe2-d810-4e28-b8b7-7121b5ea11f0.png)
+![012402](https://user-images.githubusercontent.com/83529682/215229599-67b28c45-72f3-4864-ac22-893c32a05b69.png)
+![012403](https://user-images.githubusercontent.com/83529682/215229614-e3d3729d-59c8-459f-83c8-650149ff1544.png)
+![012404](https://user-images.githubusercontent.com/83529682/215229620-ffb9c993-404d-4b5a-857e-36103955ee8d.png)
+
+
 # 構築手順
 
 http://サーバーのIPアドレス/signup.php でユーザー情報を登録後、login.php でログインしてbbs.phpにアクセス
