@@ -4,7 +4,7 @@ http://サーバーのIPアドレス/signup.php でユーザー情報を登録�
 
 ## 準備
 インスタンスを起動し秘密鍵を作成、<br>
-Docker,Git,をインストールする
+Dockerをインストールする
 ```
 docker インストール方法
 sudo yum install -y docker
