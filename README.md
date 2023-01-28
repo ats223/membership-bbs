@@ -1,7 +1,14 @@
 ## 概要
-<img src="https://user-images.githubusercontent.com/83529682/215229590-168d5fe2-d810-4e28-b8b7-7121b5ea11f0.png" width="320px"> <img src="https://user-images.githubusercontent.com/83529682/215229599-67b28c45-72f3-4864-ac22-893c32a05b69.png" width="320px"> 
+タイムラインページでは文章と画像が投稿できます。自身がフォローしている人の投稿のみが時系列で表示されます。画像のサイズはサイズの大きい画像をブラウザ側で自動で縮小してからアップロードされます。名前をクリックすると相手のプロフィールページに移動します。
+また、タイムラインは無限スクロールが実装されています。
 
-<img src="https://user-images.githubusercontent.com/83529682/215229614-e3d3729d-59c8-459f-83c8-650149ff1544.png" width="320px"> <img src="https://user-images.githubusercontent.com/83529682/215229620-ffb9c993-404d-4b5a-857e-36103955ee8d.png" width="320px"> 
+会員一覧ページでは、登録したユーザーの名前が表示されます。名前と年齢でユーザーを検索することができます。
+
+プロフィールページでは、設定した名前、アイコン、ヘッダー画像と年齢が表示されます。フォローしたユーザーはフォローした日付が表示されます。
+
+<img src="https://user-images.githubusercontent.com/83529682/215229590-168d5fe2-d810-4e28-b8b7-7121b5ea11f0.png" width="320px">　　<img src="https://user-images.githubusercontent.com/83529682/215229599-67b28c45-72f3-4864-ac22-893c32a05b69.png" width="320px"> 
+
+<img src="https://user-images.githubusercontent.com/83529682/215229614-e3d3729d-59c8-459f-83c8-650149ff1544.png" width="320px">　　<img src="https://user-images.githubusercontent.com/83529682/215229620-ffb9c993-404d-4b5a-857e-36103955ee8d.png" width="320px"> 
 
 
 # 構築手順
@@ -9,7 +16,7 @@
 http://サーバーのIPアドレス/signup.php でユーザー情報を登録後、login.php でログインしてbbs.phpにアクセス
 
 ## 準備
-インスタンスを起動し秘密鍵を作成、<br>
+インスタンスを起動し秘密鍵を作成<br>
 Dockerをインストールする
 ```
 docker インストール方法
@@ -83,6 +90,6 @@ CREATE TABLE `user_relationships` (
 
 登録されるメールアドレスに対する所有確認作業は今回は省きます。
 
-ユーザー情報を登録後、メールアドレスとパスワードを入力し、ログインする。
+ユーザー情報を登録後メールアドレスとパスワードを入力し、ログインする。
 
 以上で構築手順は終了です。
