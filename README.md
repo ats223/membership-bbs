@@ -4,7 +4,7 @@ http://サーバーのIPアドレス/signup.php でユーザー情報を登録�
 
 ## 準備
 インスタンスを起動し秘密鍵を作成、<br>
-あらかじめPHP,Docker,Git,MYSQLをインストールする
+Docker,Git,をインストールする
 ```
 docker インストール方法
 sudo yum install -y docker
@@ -12,12 +12,6 @@ sudo systemctl start docker
 sudo systemctl enable docker
 sudo usermod -a -G docker ec2-user
 
-PHP インストール
-sudo yum install php php-fpm php-mysql php-curl php-gd php-mbstring php-mcrypt php-xml php-xmlrpc
-
-MySQL インストール
-sudo rpm -ivh http://dev.mysql.com/get/mysql57-community-release-el7-8.noarch.rpm
-sudo yum install mysql-community-server
 ```
 
 
